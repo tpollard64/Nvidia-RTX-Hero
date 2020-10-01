@@ -2,22 +2,32 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
 
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
+
     public static void main(String[] args) throws InterruptedException {
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(false);
+        options.setHeadless(true);
         options.addArguments("--incognito");
         ChromeDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
         Website newegg = new Website();
         ArrayList<Card> cards = new ArrayList<Card>();
-        cards.add(new Card("2060", "GIGABYTE", "GIGABYTE GeForce RTX 2060 DirectX 12 GV-N2060GAMINGOC PRO-6GD Ver 2.0 6GB 192-Bit GDDR6 PCI Express 3.0 x16 ATX Video Card", "N82E16814932225","https://www.newegg.com/gigabyte-geforce-rtx-2060-gv-n2060gamingoc-pro-6gd-ver-2-0/p/N82E16814932225?Description=2060&cm_re=2060-_-14-932-225-_-Product", "359.99"));
-        cards.add(new Card("3090","ASUS", "ASUS TUF Gaming GeForce RTX 3090 DirectX 12 TUF-RTX3090-O24G-GAMING 24GB 384-Bit GDDR6X PCI Express 4.0 x16 HDCP Ready SLI Support Video Card", "N82E16814126454", "https://www.newegg.com/asus-geforce-rtx-3090-tuf-rtx3090-o24g-gaming/p/N82E16814126454?Description=3090&cm_re=3090-_-14-126-454-_-Product&quicklink=true", "1599.99"));
+        //cards.add(new Card("2060", "GIGABYTE", "GIGABYTE GeForce RTX 2060 DirectX 12 GV-N2060GAMINGOC PRO-6GD Ver 2.0 6GB 192-Bit GDDR6 PCI Express 3.0 x16 ATX Video Card", "N82E16814932225","https://www.newegg.com/gigabyte-geforce-rtx-2060-gv-n2060gamingoc-pro-6gd-ver-2-0/p/N82E16814932225?Description=2060&cm_re=2060-_-14-932-225-_-Product", "359.99"));
         cards.add(new Card("3090","ASUS", "ASUS TUF Gaming GeForce RTX 3090 DirectX 12 TUF-RTX3090-O24G-GAMING 24GB 384-Bit GDDR6X PCI Express 4.0 x16 HDCP Ready SLI Support Video Card", "N82E16814126454", "https://www.newegg.com/asus-geforce-rtx-3090-tuf-rtx3090-o24g-gaming/p/N82E16814126454?Description=3090&cm_re=3090-_-14-126-454-_-Product&quicklink=true", "1599.99"));
         cards.add(new Card("3090","ASUS", "ASUS TUF Gaming GeForce RTX 3090 TUF-RTX3090-24G-GAMING Video Card", "N82E16814126455", "https://www.newegg.com/asus-geforce-rtx-3090-tuf-rtx3090-24g-gaming/p/N82E16814126455?Description=3090&cm_re=3090-_-14-126-455-_-Product", "1499.99"));
         cards.add(new Card("3090","ASUS", "ASUS ROG Strix GeForce RTX 3090 DirectX 12 ROG-STRIX-RTX3090-O24G-GAMING 24GB 384-Bit GDDR6X PCI Express 4.0 x16 HDCP Ready SLI Support Video Card", "N82E16814126456", "https://www.newegg.com/asus-geforce-rtx-3090-rog-strix-rtx3090-o24g-gaming/p/N82E16814126456?Description=3090&cm_re=3090-_-14-126-456-_-Product", "1799.99"));
@@ -32,37 +42,37 @@ public class Main {
         cards.add(new Card("3090","GIGABYTE", "GIGABYTE GeForce RTX 3090 DirectX 12 GV-N3090GAMING OC-24GD 24GB 384-Bit GDDR6X PCI Express 4.0 x16 SLI Support ATX Video Card", "N82E16814932327", "https://www.newegg.com/gigabyte-geforce-rtx-3090-gv-n3090gaming-oc-24gd/p/N82E16814932327?Description=3090&cm_re=3090-_-14-932-327-_-Product", "1579.99"));
         cards.add(new Card("3090","GIGABYTE", "GIGABYTE GeForce RTX 3090 DirectX 12 GV-N3090EAGLE OC-24GD 24GB 384-Bit GDDR6X PCI Express 4.0 x16 SLI Support ATX Video Card", "N82E16814932328", "https://www.newegg.com/gigabyte-geforce-rtx-3090-gv-n3090eagle-oc-24gd/p/N82E16814932328?Description=3090&cm_re=3090-_-14-932-328-_-Product", "1499.99"));
 
-
-        //for each card in cards go to url
-        for (int i = 0; i < cards.size(); i++){
-            driver.get(cards.get(i).getUrl());
-            System.out.println("Add " + cards.get(i).getModel() + " to cart");
-            Thread.sleep((long) (Math.random() * (1023 + 3434)));
-            if (driver.findElements(By.xpath("//button[@class=\"btn btn-primary btn-wide\"]")).size() > 0){
-                System.out.println("Adding " + cards.get(i).getModel() + " to cart");
-                Thread.sleep(5000);
-                driver.findElement(By.xpath("//button[@class=\"btn btn-primary btn-wide\"]")).click();
-                Thread.sleep(5000);
-                //driver.get("https://secure.newegg.com/Shopping/ShoppingCart.aspx"); going straight to cart doesn't work
-                driver.get("https://www.newegg.com/d/Shopping/ShoppingItem?ItemList=" + cards.get(i).getSku());
-                Thread.sleep((long)Math.random() * (1323 + 3423));
-                if (driver.findElements(By.className("btn btn-primary")).size() > 0){
-                    driver.findElement(By.className("btn btn-primary")).click();
-                    Thread.sleep((long)Math.random() * (1212 + 3423));
-                    if (driver.findElements(By.className("button button-primary has-icon-right")).size() > 0){
-                        driver.findElement(By.className("button button-primary has-icon-right")).click();
+        boolean inStock = false;
+        do {
+            for (int i = 0; i < cards.size(); i++){
+                driver.get(cards.get(i).getUrl());
+                //Thread.sleep((long) Math.random() * 2003);
+                if (driver.findElements(By.xpath("//button[@class=\"btn btn-primary btn-wide\"]")).size() > 0){
+                    System.out.println(ANSI_YELLOW + "Info " +ANSI_RESET + ": :" + ANSI_CYAN + "Adding :" +ANSI_RESET + cards.get(i).getModel() + ANSI_GREEN + " to cart" + ANSI_RESET);
+                    //Thread.sleep(5000);
+                    driver.findElement(By.xpath("//button[@class=\"btn btn-primary btn-wide\"]")).click();
+                    //Thread.sleep(5000);
+                    //driver.get("https://secure.newegg.com/Shopping/ShoppingCart.aspx"); going straight to cart doesn't work
+                    driver.get("https://www.newegg.com/d/Shopping/ShoppingItem?ItemList=" + cards.get(i).getSku());
+                    //Thread.sleep((long)Math.random() * (1323 + 3423));
+                    inStock = true;
+                    if (driver.findElements(By.className("btn btn-primary")).size() > 0){
+                        driver.findElement(By.className("btn btn-primary")).click();
+                        //Thread.sleep((long)Math.random() * (1212 + 3423));
+                        if (driver.findElements(By.className("button button-primary has-icon-right")).size() > 0){
+                            driver.findElement(By.className("button button-primary has-icon-right")).click();
+                        }
                     }
                 }
-
-
-
-
-
-                break;
-
+                else {
+                    System.out.println(ANSI_YELLOW + "Info " + ANSI_RESET + ": : " + ANSI_CYAN  + cards.get(i).getModel() + ANSI_RESET + ANSI_GREEN + " : : " + ANSI_RED + "OUT OF STOCK");
+                }
+                Thread.sleep((long) Math.random() * 1242); // fast with 4 digits
             }
-            Thread.sleep((long) Math.random() * 12423); // fast with 4 digits
-        }
+
+        }while (!inStock);
+        //for each card in cards go to url
+
 
 
 
