@@ -17,7 +17,7 @@ Find 3090 and 3080 cards in stock at Newegg or Bestbuy
 
 Use this behind a proxy or VPN. 
 
-This tool will find an instock gpu, and send your phone an add to cart link for bestbuy, or a product link on newegg that will have apple pay. This should speed up the checkout process quite a bit. 
+This tool will find an in stock gpu, and send your phone an add to cart link for bestbuy, or a product link on newegg that will have apple pay. This should speed up the checkout process quite a bit. 
 
 Features to integrate:
 1. Autocheckout (I had this working prior to the 3080 launch. After the 3080 launch bot detection has increased quiet a bit. It is very hard to not be seen as a bot so I may not fully integrate this feature again. I honestly believe it is faster to just checkout with saved information in your browser to avoid avoid bot detection. 
