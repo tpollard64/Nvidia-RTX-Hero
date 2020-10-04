@@ -11,7 +11,7 @@
  
  
  
- Nvidai RTX 3090 Add to cart bot.
+ Nvidai RTX 3090 add to cart bot.
  
 Find 3090 and 3080 cards in stock at Newegg or Bestbuy
 
