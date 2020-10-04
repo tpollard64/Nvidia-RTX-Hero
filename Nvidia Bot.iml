@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="byte-buddy-1.8.15" level="project" />
+    <orderEntry type="library" name="commons-codec-1.15" level="project" />
   </component>
 </module>
