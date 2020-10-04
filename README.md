@@ -1,7 +1,7 @@
 # NVIDIA RTX HERO 
  
  
- ![Alt text](https://imgur.com/7yBPiAI "NVIDIA RTX HERO")
+ ![Alt text](screenshot.png?raw=true "Optional Title")
  
  
  
