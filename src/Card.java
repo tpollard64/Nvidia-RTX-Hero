@@ -66,7 +66,7 @@ public class Card {
     public Website getWebsite(){
         return website;
     }
-
+    //best buy only right now
     public String getAddToCartURL() {
         addToCartURL = "https://api.bestbuy.com/click/-/" + sku + "/cart";
         return addToCartURL;

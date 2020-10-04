@@ -11,6 +11,11 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
 
+    Profile profile = new Profile();
+    Billing billing = new Billing();
+    Scanner scan = new Scanner(System.in);
+
+
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
@@ -22,53 +27,30 @@ public class Main {
     public static final String ANSI_WHITE = "\u001B[37m";
 
     public static void main(String[] args) throws InterruptedException {
-        Scanner scan = new Scanner(System.in);
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(false);
         options.addArguments("--incognito");
         ChromeDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 
         System.out.println("");
         System.out.println(ANSI_GREEN+"");
-        System.out.println("███╗   ██╗██╗   ██╗██╗██████╗ ██╗ █████╗     ██████╗ ████████╗██╗  ██╗    ██╗  ██╗███████╗██████╗  ██████╗ \n" +
-                "████╗  ██║██║   ██║██║██╔══██╗██║██╔══██╗    ██╔══██╗╚══██╔══╝╚██╗██╔╝    ██║  ██║██╔════╝██╔══██╗██╔═══██╗\n" +
-                "██╔██╗ ██║██║   ██║██║██║  ██║██║███████║    ██████╔╝   ██║    ╚███╔╝     ███████║█████╗  ██████╔╝██║   ██║\n" +
-                "██║╚██╗██║╚██╗ ██╔╝██║██║  ██║██║██╔══██║    ██╔══██╗   ██║    ██╔██╗     ██╔══██║██╔══╝  ██╔══██╗██║   ██║\n" +
-                "██║ ╚████║ ╚████╔╝ ██║██████╔╝██║██║  ██║    ██║  ██║   ██║   ██╔╝ ██╗    ██║  ██║███████╗██║  ██║╚██████╔╝\n" +
-                "╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═════╝ ╚═╝╚═╝  ╚═╝    ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝ \n" +
-                "                                                                                                           " + ANSI_RESET);
+        System.out.println( "███╗   ██╗██╗   ██╗██╗██████╗ ██╗ █████╗     ██████╗ ████████╗██╗  ██╗    ██╗  ██╗███████╗██████╗  ██████╗ \n" +
+                            "████╗  ██║██║   ██║██║██╔══██╗██║██╔══██╗    ██╔══██╗╚══██╔══╝╚██╗██╔╝    ██║  ██║██╔════╝██╔══██╗██╔═══██╗\n" +
+                            "██╔██╗ ██║██║   ██║██║██║  ██║██║███████║    ██████╔╝   ██║    ╚███╔╝     ███████║█████╗  ██████╔╝██║   ██║\n" +
+                            "██║╚██╗██║╚██╗ ██╔╝██║██║  ██║██║██╔══██║    ██╔══██╗   ██║    ██╔██╗     ██╔══██║██╔══╝  ██╔══██╗██║   ██║\n" +
+                            "██║ ╚████║ ╚████╔╝ ██║██████╔╝██║██║  ██║    ██║  ██║   ██║   ██╔╝ ██╗    ██║  ██║███████╗██║  ██║╚██████╔╝\n" +
+                            "╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═════╝ ╚═╝╚═╝  ╚═╝    ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝ \n" +
+                             "                                                                                                           " + ANSI_RESET);
 
         Website newegg = new Website();
         Website bestbuy = new Website();
-        Profile profile = new Profile();
-        Billing billing = new Billing();
+
 
         ArrayList<Card> cards = new ArrayList<Card>();
 
 
         //for auto checkout function coming soon
-        /*System.out.println("Enter First Name: ");
-        profile.setFirstName(scan.next());
-        System.out.println("Enter Last Name: ");
-        profile.setLastName(scan.next());
-        System.out.println("Enter email address to be used for transaction: ");
-        profile.setEmailAddress(scan.next());
-        System.out.println("Enter billing/shipping address: ");
-        billing.setStreetAddress(scan.next());
-        System.out.println("Enter billing/shipping city: ");
-        billing.setCity(scan.next());
-        System.out.println("Enter billing state: ");
-        billing.setState(scan.next());
-        System.out.println("Enter Credit Card #: ");
-        billing.setCreditCardNumber(scan.next());
-        System.out.println("Enter expiration month (i.e. 04): ");
-        billing.setExpMon(scan.next());
-        System.out.println("Enter expiration year (i.e. 2025): ");
-        billing.setExpYear(scan.next());
-        System.out.println("Enter ccv: ");
-        billing.setCcv(scan.next());
-        */
 
         //cards.add(new Card("2060", "GIGABYTE", "GIGABYTE GeForce RTX 2060 DirectX 12 GV-N2060GAMINGOC PRO-6GD Ver 2.0 6GB 192-Bit GDDR6 PCI Express 3.0 x16 ATX Video Card", "N82E16814932225","https://www.newegg.com/gigabyte-geforce-rtx-2060-gv-n2060gamingoc-pro-6gd-ver-2-0/p/N82E16814932225?Description=2060&cm_re=2060-_-14-932-225-_-Product", "359.99"));
         cards.add(new Card("3090","ASUS", "ASUS TUF Gaming GeForce RTX 3090 DirectX 12 TUF-RTX3090-O24G-GAMING 24GB 384-Bit GDDR6X PCI Express 4.0 x16 HDCP Ready SLI Support Video Card", "N82E16814126454", "https://www.newegg.com/asus-geforce-rtx-3090-tuf-rtx3090-o24g-gaming/p/N82E16814126454?Description=3090&cm_re=3090-_-14-126-454-_-Product&quicklink=true", "1599.99", newegg));
@@ -102,7 +84,6 @@ public class Main {
             do {
                 for (int i = 0; i < cards.size(); i++) {
                     driver.get(cards.get(i).getUrl());
-                    Thread.sleep((long) (Math.random() * 2003));
                     if (cards.get(i).getWebsite() == newegg)
                         if (driver.findElements(By.xpath("//button[@class=\"btn btn-primary btn-wide\"]")).size() > 0) {
                             System.out.println(ANSI_YELLOW + "Info " + ANSI_RESET + ": :" + ANSI_CYAN + "Adding :" + ANSI_RESET + cards.get(i).getModel() + ANSI_GREEN + " to cart" + ANSI_RESET);
@@ -121,7 +102,7 @@ public class Main {
                                 }
                             }
                         } else {
-                            System.out.println(ANSI_YELLOW + "Info " + ANSI_RESET + ": : " + ANSI_CYAN + cards.get(i).getModel() + ANSI_RESET + ANSI_GREEN + " : : " + ANSI_RED + "OUT OF STOCK");
+                            System.out.println(ANSI_YELLOW + "Info " + ANSI_RESET + ": : " + ANSI_CYAN + cards.get(i).getModel() + ANSI_RESET + ANSI_GREEN + " : : " + ANSI_RED + "OUT OF STOCK at NEWEGG");
                         }
                     else if (cards.get(i).getWebsite() == bestbuy){
                         //System.out.println(cards.get(i).getAddToCartURL());
@@ -131,15 +112,38 @@ public class Main {
                             inStock = true;
                         }
                         else {
-                            System.out.println(ANSI_YELLOW + "Info " + ANSI_RESET + ": : " + ANSI_CYAN + cards.get(i).getModel() + ANSI_RESET + ANSI_GREEN + " : : " + ANSI_RED + "OUT OF STOCK");
+                            System.out.println(ANSI_YELLOW + "Info " + ANSI_RESET + ": : " + ANSI_CYAN + cards.get(i).getModel() + ANSI_RESET + ANSI_GREEN + " : : " + ANSI_RED + "OUT OF STOCK at BEST BUY");
                             Thread.sleep((long) (Math.random() * 2353));
                         }
 
                     }
-
-                    Thread.sleep((long) (Math.random() * 1242));
                 }
 
             } while (!inStock);
+    }
+
+
+    // work on later
+    public void autoCheckoutSetup(){
+        System.out.println("Enter First Name: ");
+        profile.setFirstName(scan.next());
+        System.out.println("Enter Last Name: ");
+        profile.setLastName(scan.next());
+        System.out.println("Enter email address to be used for transaction: ");
+        profile.setEmailAddress(scan.next());
+        System.out.println("Enter billing/shipping address: ");
+        billing.setStreetAddress(scan.next());
+        System.out.println("Enter billing/shipping city: ");
+        billing.setCity(scan.next());
+        System.out.println("Enter billing state: ");
+        billing.setState(scan.next());
+        System.out.println("Enter Credit Card #: ");
+        billing.setCreditCardNumber(scan.next());
+        System.out.println("Enter expiration month (i.e. 04): ");
+        billing.setExpMon(scan.next());
+        System.out.println("Enter expiration year (i.e. 2025): ");
+        billing.setExpYear(scan.next());
+        System.out.println("Enter ccv: ");
+        billing.setCcv(scan.next());
     }
 }
