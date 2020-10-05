@@ -24,4 +24,6 @@ Features to integrate:
 
 2. Add product selection options. Currently it checks for all models of 3080/3090s in stock. I will take whatever I can get so I have been running it on everything. I will be adding a user selection method in the near future.
 
+3. NVIDIA store support. I had a working solution for the NVIDIA store but their API has been terrible lately. They are very clearly trying to prevent bots with their API blackouts. I am working on a solution that monitors the NVIDIA store for changes before pushing API requests. I assume the API will come back online before the add to cart buttons go live.
+
 I am open to suggestions! Please let me know of any features you think would help you get a 3090/3080!
