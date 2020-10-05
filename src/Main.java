@@ -10,15 +10,15 @@ import java.util.Scanner;
 
 public class Main {
 
-    Profile profile = new Profile();
-    Billing billing = new Billing();
-    Scanner scan = new Scanner(System.in);
+    Profile profile = new Profile(); // profile coming soon
+    Billing billing = new Billing(); //billing auto fill coming soon
+    Scanner scan = new Scanner(System.in); 
 
 
     public static final String ACCOUNT_SID = ""; // Your Twilio SID
     public static final String AUTH_TOKEN = ""; // Your Twilio Auto Token
-    public static final String PHONE_NUMBER = "";
-    public static final String TWILIO_NUMBER = "";
+    public static final String PHONE_NUMBER = ""; // Enter your phone number example : +12345678999
+    public static final String TWILIO_NUMBER = ""; // Enter your twilio number +12345678999
 
 
     public static final String ANSI_RESET = "\u001B[0m";
@@ -58,6 +58,8 @@ public class Main {
 
 
         //for auto checkout function coming soon
+        
+        //  <<<< use two slashes to comment out the cards you are not interested in buying
 
         //cards.add(new Card("2060", "GIGABYTE", "GIGABYTE GeForce RTX 2060 DirectX 12 GV-N2060GAMINGOC PRO-6GD Ver 2.0 6GB 192-Bit GDDR6 PCI Express 3.0 x16 ATX Video Card", "N82E16814932225","https://www.newegg.com/gigabyte-geforce-rtx-2060-gv-n2060gamingoc-pro-6gd-ver-2-0/p/N82E16814932225?Description=2060&cm_re=2060-_-14-932-225-_-Product", "359.99", newegg));
         cards.add(new Card("3090","ASUS", "ASUS TUF Gaming GeForce RTX 3090 DirectX 12 TUF-RTX3090-O24G-GAMING 24GB 384-Bit GDDR6X PCI Express 4.0 x16 HDCP Ready SLI Support Video Card", "N82E16814126454", "https://www.newegg.com/asus-geforce-rtx-3090-tuf-rtx3090-o24g-gaming/p/N82E16814126454?Description=3090&cm_re=3090-_-14-126-454-_-Product&quicklink=true", "1599.99", newegg));
