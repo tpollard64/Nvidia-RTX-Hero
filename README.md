@@ -10,6 +10,8 @@
  
  
  
+ ### Thanks for the interest in my project. A more detailed README will be posted tomorrow for those that do not know anything about Java.
+ 
  
  Nvidai RTX 3090 add to cart bot.
  
@@ -27,3 +29,14 @@ Features to integrate:
 3. NVIDIA store support. I had a working solution for the NVIDIA store but their API has been terrible lately. They are very clearly trying to prevent bots with their API blackouts. I am working on a solution that monitors the NVIDIA store for changes before pushing API requests. I assume the API will come back online before the add to cart buttons go live.
 
 I am open to suggestions! Please let me know of any features you think would help you get a 3090/3080!
+
+
+#### Instruction
+
+1. Install  >>> https://www.jetbrains.com/idea/
+
+2. Setup a trial twilio account >>> https://www.twilio.com/ 
+
+3. Download and unzip the Twilio .jar files >>> https://jar-download.com/artifact-search/twilio
+
+4. 
