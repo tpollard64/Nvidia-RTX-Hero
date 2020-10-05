@@ -33,10 +33,26 @@ I am open to suggestions! Please let me know of any features you think would hel
 
 #### Instruction
 
+##### NOTE: USE A PROXY OR VPN DURING USE. FAILURE TO DO SO MAY GET YOU BANNED FROM BUYING. KEEP YOU CPU RUNNING THIS SOFTWARE, AND KEEP YOUR PHONE ON YOUR HOME NETWORK WITH NO VPN. NOTIFICATION WILL COME VIA TEXT. CHECKOUT ON YOUR PHONE.
+
 1. Install  >>> https://www.jetbrains.com/idea/
 
 2. Setup a trial twilio account >>> https://www.twilio.com/ 
 
 3. Download and unzip the Twilio .jar files >>> https://jar-download.com/artifact-search/twilio
 
-4. 
+4. Download and unzip Selenium . jar files >>> https://jar-download.com/?search_box=selenium
+
+5. Download and unzip this repo as zip (TOP RIGHT)
+
+6. Open IntelliJ and open the repo file you just unzip
+
+7. In IntelliJ >>> File > Project Structure > Libraries > + Sign > Java > select all the jar files unziped from twilio download
+
+8. Repeat step 7 with all the .jar files unzipped from the selenium download
+
+9. In main.java enter your twilio sid and auth-token, phone number, and twilio phone number
+
+10. Comment out any cards you are not interested in buying 
+
+11. Run Main.java
