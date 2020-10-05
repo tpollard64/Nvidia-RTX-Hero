@@ -36,7 +36,7 @@ public class Main {
         options.setHeadless(false);
         options.addArguments("--incognito");
         ChromeDriver driver = new ChromeDriver(options);
-        //driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
 
