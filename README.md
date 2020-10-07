@@ -10,10 +10,10 @@
  
  
  
- ### Thanks for the interest in my project. A more detailed README will be posted tomorrow for those that do not know anything about Java.
+ ### Thanks for the interest in my project. A more detailed README will be coming soon.
  
  
- Nvidai RTX 3090 add to cart bot.
+ NVIDIA RTX 3090 add to cart bot.
  
 Find 3090 and 3080 cards in stock at Newegg or Bestbuy
 
