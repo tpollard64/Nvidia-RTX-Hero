@@ -10,6 +10,12 @@
  
  
  
+ 
+ ## OCT 9th Updates:
+ 
+ #### Working on a packaged release that will hopefully go live this weekend
+ #### Looking for a GUI designer to hop onboard this project
+ #### Checkout reddit.com/r/GPUBOTS  for GPU Bot discussions
  ### Thanks for the interest in my project. A more detailed README will be coming soon.
  
  
