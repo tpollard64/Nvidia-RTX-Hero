@@ -49,20 +49,16 @@ I am open to suggestions! Please let me know of any features you think would hel
 
 2. Setup a trial twilio account >>> https://www.twilio.com/ 
 
-3. Download and unzip the Twilio .jar files >>> https://jar-download.com/artifact-search/twilio
+3. Clone this repo
 
-4. Download and unzip Selenium . jar files >>> https://jar-download.com/?search_box=selenium
+4. Open project in IntelliJ
 
-5. Download and unzip this repo as zip (TOP RIGHT)
+5. Right click pox.xml >>> Maven >>> Reload project
 
-6. Open IntelliJ and open the repo file you just unzip
+6. Input twilio information at the top of Bot.java 
 
-7. In IntelliJ >>> File > Project Structure > Libraries > + Sign > Java > select all the jar files unziped from twilio download
+7. Input your phone number in PHONE_NUMBER at top of Bot.java
 
-8. Repeat step 7 with all the .jar files unzipped from the selenium download
+8. Comment out any cards you aren't interested in at the bottom of Bot.java  >>> Note put two // in front of the line you want to comment out
 
-9. In main.java enter your twilio sid and auth-token, phone number, and twilio phone number
-
-10. Comment out any cards you are not interested in buying 
-
-11. Run Main.java
+9. Sit back and wait for NVIDIA to actually release the 3080/3090.
